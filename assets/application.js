@@ -14,11 +14,13 @@ $(function(){
 		});
 	}
 
-	$(document).on("click", "a", function(e){
+	$(document).on("click", "a.html5history", function(e){
 		history.pushState(null, null, this.href);
 		replacePage(this.href);
 		e.preventDefault();
 	});
+
+	$('#status').val($('#status').val() + ' on ' + new Date());
 
 	$(window).bind('popstate', function(){
 		replacePage(location.pathname);

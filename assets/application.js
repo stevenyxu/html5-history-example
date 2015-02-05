@@ -14,7 +14,7 @@ $(function(){
 		});
 	}
 
-	$('a').live('click', function(e){
+	$(document).on("click", "a", function(e){
 		history.pushState(null, null, this.href);
 		replacePage(this.href);
 		e.preventDefault();
